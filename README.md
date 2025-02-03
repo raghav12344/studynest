@@ -40,10 +40,6 @@ Ensure you have the following installed:
 - **Rounak Das** | [Email](mailto:rounak.20243585@mnnit.ac.in) | Discord: az9tumas  
 - **Pragya Agarwal** | [Email](mailto:pragya.20243535@mnnit.ac.in) | Discord: ._aetheric  
 
-## 📢 DevJam 8.0 Submission  
-StudyNest: Bridging Education and Innovation. A Hub for Smarter Learning.  
-
----
-Made with ❤️ by **DevHive**  
+Made by **DevHive**  
 
 
