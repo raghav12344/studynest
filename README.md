@@ -26,4 +26,24 @@ Ensure you have the following installed:
 1. **Clone the repository**  
    ```bash
    git clone https://github.com/your-repo/studynest.git
-   cd studynest
+   cd studynest```
+2. Install dependencies
+   ```bash
+   npm install```
+3. Run the project:
+   ```bash
+   npm run start```
+
+## 📌 Team DevHive  
+- **Krishnendu Hashir** | [Email](mailto:raghav.20243226@mnnit.ac.in) | Discord: its_raghav_  
+- **Raghav Gupta** | [Email](mailto:krishnendu.20243526@mnnit.ac.in) | Discord: dangerous.dosa  
+- **Rounak Das** | [Email](mailto:rounak.20243585@mnnit.ac.in) | Discord: az9tumas  
+- **Pragya Agarwal** | [Email](mailto:pragya.20243535@mnnit.ac.in) | Discord: ._aetheric  
+
+## 📢 DevJam 8.0 Submission  
+StudyNest: Bridging Education and Innovation. A Hub for Smarter Learning.  
+
+---
+Made with ❤️ by **DevHive**  
+
+
