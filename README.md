@@ -38,8 +38,8 @@ Ensure you have the following installed:
    ```
 
 ## 📌 Team DevHive  
-- **Krishnendu Hashir** | [Email](mailto:raghav.20243226@mnnit.ac.in) | Discord: its_raghav_  
-- **Raghav Gupta** | [Email](mailto:krishnendu.20243526@mnnit.ac.in) | Discord: dangerous.dosa  
+- **Krishnendu Hashir** | [Email](mailto:raghav.20243226@mnnit.ac.in) | Discord: dangerous.dosa  
+- **Raghav Gupta** | [Email](mailto:krishnendu.20243526@mnnit.ac.in) | Discord: its_raghav_  
 - **Rounak Das** | [Email](mailto:rounak.20243585@mnnit.ac.in) | Discord: az9tumas  
 - **Pragya Agarwal** | [Email](mailto:pragya.20243535@mnnit.ac.in) | Discord: ._aetheric  
 
