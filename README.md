@@ -26,13 +26,16 @@ Ensure you have the following installed:
 1. **Clone the repository**  
    ```bash
    git clone https://github.com/your-repo/studynest.git
-   cd studynest```
+   cd studynest
+   ```
 2. Install dependencies
    ```bash
-   npm install```
+   npm install
+   ```
 3. Run the project:
    ```bash
-   npm run start```
+   npm run start
+   ```
 
 ## 📌 Team DevHive  
 - **Krishnendu Hashir** | [Email](mailto:raghav.20243226@mnnit.ac.in) | Discord: its_raghav_  
