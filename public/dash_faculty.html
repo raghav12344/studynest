@@ -1,0 +1,135 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyNest - Smart Learning Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<!-- bootstrap link -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<!--                 -->
+<!-- jquery cdn link -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<!--                 -->
+<!-- Angular Js link -->
+
+<!--                 -->
+<script>
+    $(document).ready(function () {
+        $("#wlcmSpan").html("Welcome " + localStorage.getItem("activeReg"));
+        $("#btnlogout").click(function () {
+            if (confirm("Do you want to logOut?")) {
+                history.pushState(null, "", "index.html");
+                location.href = "index.html";
+                localStorage.removeItem("activeReg");
+            }
+        })
+    })
+</script>
+<style>
+    .card {
+        transition: ease all 1s;
+    }
+
+    .card:hover {
+        cursor: pointer;
+        transform: scale(1.2);
+        transition: ease all 1s;
+    }
+</style>
+
+<body>
+    <div class="row">
+        <div class="col-md-12">
+            <nav class="navbar" style="background: #0b1c2c;">
+                <div class="container-fluid">
+                    <a class="navbar-brand" style="color: #ff8c00; font-size: 1.5em; font-weight: bold;">StudyNest:
+                        <span id="wlcmSpan" style="color: white; margin-left: 5px; font-size: 1.1rem;"></span></a>
+
+                    <form class="d-flex" role="search">
+                        <button class="btn btn-outline-danger" type="submit" id="btnlogout">LogOut</button>
+                    </form>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <section class="hero">
+                <div class="hero-content">
+                    <h1>Welcome to StudyNest</h1>
+                    <p>Your smart classroom management system for seamless learning and collaboration.</p>
+                    <a href="#features" class="btn" style="color: white;"></a>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <center>
+                <div class="card" style="width: 18rem;">
+                    <img src="images/anouncements.png" class="card-img-top" alt="..." style="height: 250px;">
+                    <div class="card-body">
+                        <center>
+                            <p class="card-text" style="font-family: comic sans ms;">Upload Some Important
+                                <b>Information</b> To Users
+                            </p>
+                        </center>
+                    </div>
+                </div>
+            </center>
+        </div>
+        <div class="col-md-3">
+            <center>
+                <div class="card" style="width: 18rem;">
+                    <img src="images/add_teacher.jpg" class="card-img-top" alt="..." style="height: 250px;">
+                    <div class="card-body">
+                        <center>
+                            <p class="card-text" style="font-family: comic sans ms;">Register New <b>Joining</b>
+                                Faculty/Member
+                            </p>
+                        </center>
+                    </div>
+                </div>
+            </center>
+        </div>
+        <div class="col-md-3">
+            <center>
+                <div class="card" style="width: 18rem;">
+                    <img src="images/personal_details.jpg" class="card-img-top" alt="..." style="height: 250px;">
+                    <div class="card-body">
+                        <center>
+                            <p class="card-text" style="font-family: comic sans ms;">Upload Own
+                                <b>Details</b>
+                                For Complete Registeration
+                            </p>
+                        </center>
+                    </div>
+                </div>
+            </center>
+        </div>
+        <div class=" col-md-3">
+            <center>
+                <div class="card" style="width: 18rem;">
+                    <img src="images/settings.png" class="card-img-top" alt="..." style="height: 250px;">
+                    <div class="card-body">
+                        <center>
+                            <p class="card-text" style="font-family: comic sans ms;">Change <b>Password and email</b>
+                                and
+                                more......
+                            </p>
+                        </center>
+                    </div>
+                </div>
+            </center>
+        </div>
+    </div>
+</body>
+
+</html>
