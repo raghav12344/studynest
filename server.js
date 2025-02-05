@@ -1,7 +1,6 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-
 const port = 8080;
 /* Serve static files from the "public" directory */
 app.use(express.static("public"));
@@ -19,7 +18,7 @@ app.get("/", function (req, resp) {
     let path = __dirname + "/public/index.html";
     resp.sendFile(path);
 })
-
+app.use(express.urlencoded(true));
 
 app.listen(port, function (req, resp) {
     console.log("Server is running on http://localhost:${port}");
@@ -47,17 +46,16 @@ app.get("/signup", function (req, resp) {
     })
 
 })
-
-app.post("/login", function (req, resp) {
-    let reg = req.body.txtreg;
-    let pass = req.body.txtpass;
-    // db.query("select * from users where reg=? and pass=?", [reg, pass], function (err, jsonArray) {
-    //     if (err == null) {
-    //         resp.sendFile();
-    //     }
-    //     else {
-    //         resp.semd("user doesnot exist");
-    //     }
-
-    // })
+app.get("/login", function (req, resp) {
+    let reg = req.query.txtreg;
+    let pass = req.query.txtpass;
+    // console.log(reg);
+    db.query("select * from users where reg=? and pass=?", [reg, pass], function (err, jsonArray) {
+        console.log(jsonArray.length);
+        // console.log(jsonArray[0]["utype"]);
+        if (jsonArray.length == 1)
+            resp.send(jsonArray[0]["utype"]);
+        else
+            resp.send("Invalid Reg. No. and Password");
+    })
 })

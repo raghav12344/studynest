@@ -40,144 +40,168 @@
                 .fail(function (error) {
                     alert(error);
                 })
-        }
+        })
+        $("#loginbtn").click(function () {
+            let logreg = $("#regLogin").val();
+            // alert(logreg);
+            let logpass = $("#passLogin").val();
+            let obj = {
+                type: "get",
+                url: "/login",
+                data: {
+                    txtreg: logreg,
+                    txtpass: logpass
+                }
+            };
+            var type;
+            $.ajax(obj).done(function (response) {
+                alert(response);
+                if (response == "STUDENT") {
+                    localStorage.setItem("activeReg", logreg);
+                    location.href = "dash_student.html";
+                }
+                if (response == "FACULTY") {
+                    localStorage.setItem("activeReg", logreg);
+                    location.href = "dash_faculty.html";
+                }
+                if (response == "ADMIN") {
+                    localStorage.setItem("activeReg", logreg);
+                    location.href = "dash_admin.html";
+                }
+            }).fail(function (error) {
+                alert(error);
+            })
 
-
-        )
+        })
     })
 </script>
 
 <body>
-    <form style="background-color: black;" method="post">
-        <div class="row">
-            <div class="col-md-12">
-                <header>
-                    <nav>
-                        <div class="logo">StudyNest</div>
-                        <ul class="nav-links">
-                            <li><button type="button" data-bs-toggle="modal" data-bs-target="#signupModal">Sign
-                                    Up</button></li>
-                            <li><button type="button" data-bs-toggle="modal" data-bs-target="#LoginModal">Log
-                                    In</button></li>
-                        </ul>
-                    </nav>
-                </header>
-            </div>
+    <div class="row">
+        <div class="col-md-12">
+            <header>
+                <nav>
+                    <div class="logo">StudyNest</div>
+                    <ul class="nav-links">
+                        <li><button type="button" data-bs-toggle="modal" data-bs-target="#signupModal">Sign
+                                Up</button></li>
+                        <li><button type="button" data-bs-toggle="modal" data-bs-target="#LoginModal">Log
+                                In</button></li>
+                    </ul>
+                </nav>
+            </header>
         </div>
-        <!-- signup Modal -->
-        <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">SignUp</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="signupEmail" aria-describedby="emailHelp">
-                        <label for="exampleInputEmail1" class="form-label">Reg. No.</label>
-                        <input type="text" class="form-control" id="signupReg" aria-describedby="emailHelp">
-                        <label for="exampleInputEmail1" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="signupPass" aria-describedby="emailHelp">
-                        <label for="exampleInputEmail1" class="form-label">Confirm Password</label>
-                        <input type="password" class="form-control" id="signupCnfrmPass" aria-describedby="emailHelp">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button class="btn btn-primary" type="button" id="signupbtn">SignUp</button>
-                    </div>
+    </div>
+    <!-- signup Modal -->
+    <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">SignUp</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="signupEmail" aria-describedby="emailHelp">
+                    <label for="exampleInputEmail1" class="form-label">Reg. No.</label>
+                    <input type="number" class="form-control" id="signupReg" aria-describedby="emailHelp">
+                    <label for="exampleInputEmail1" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="signupPass" aria-describedby="emailHelp">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button class="btn btn-primary" type="button" id="signupbtn">SignUp</button>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Login Modal -->
-        <div class="modal fade" id="LoginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <label for="exampleInputEmail1" class="form-label">Reg. No.</label>
-                        <input type="text" class="form-control" id="regLogin" aria-describedby="emailHelp"
-                            name="txtreg">
-                        <label for="exampleInputEmail1" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="passLogin" aria-describedby="emailHelp"
-                            name="txtpass">
+    <!-- Login Modal -->
+    <div class="modal fade" id="LoginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <label for="exampleInputEmail1" class="form-label">Reg. No.</label>
+                    <input type="number" class="form-control" name="txtreg" id="regLogin" aria-describedby="emailHelp">
+                    <label for="exampleInputEmail1" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="passLogin" name="txtpass"
+                        aria-describedby="emailHelp">
 
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary" formaction="/login">Login</button>
-                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="loginbtn">Login</button>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <section class="hero">
-                    <div class="hero-content">
-                        <h1>Welcome to StudyNest</h1>
-                        <p>Your smart classroom management system for seamless learning and collaboration.</p>
-                        <a href="#features" class="btn" style="color: white;">Explore Features</a>
-                    </div>
-                </section>
-            </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <section class="hero">
+                <div class="hero-content">
+                    <h1>Welcome to StudyNest</h1>
+                    <p>Your smart classroom management system for seamless learning and collaboration.</p>
+                    <a href="#features" class="btn" style="color: white;">Explore Features</a>
+                </div>
+            </section>
         </div>
+    </div>
 
 
-        <div class="row" style="background-color: black;">
-            <div class="col-md-12">
-                <section id="features" class="features">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h2>Why Choose StudyNest?</h2>
-                        </div>
+    <div class="row" style="background-color: black;">
+        <div class="col-md-12">
+            <section id="features" class="features">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Why Choose StudyNest?</h2>
                     </div>
-                </section>
-            </div>
+                </div>
+            </section>
         </div>
-        <div class="row" style="background-color: black;">
-            <div class="col-md-3">
-                <div class="feature-container">
-                    <div class="feature-card">
-                        <h3>📌 Smart Attendance</h3>
-                        <p>Effortless and secure attendance tracking for students and professors.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="feature-container">
-                    <div class="feature-card">
-                        <h3>📚 Resource Sharing</h3>
-                        <p>Upload and access notes, assignments, and study materials with ease.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="feature-container">
-                    <div class="feature-card">
-                        <h3>📊 Student Dashboard</h3>
-                        <p>Monitor attendance records, track progress, and stay ahead.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="feature-container">
-                    <div class="feature-card">
-                        <h3>👨‍🏫 Professor Dashboard</h3>
-                        <p>Assign homework, upload solutions, and manage student performance.</p>
-                    </div>
+    </div>
+    <div class="row" style="background-color: black;">
+        <div class="col-md-3">
+            <div class="feature-container">
+                <div class="feature-card">
+                    <h3>📌 Smart Attendance</h3>
+                    <p>Effortless and secure attendance tracking for students and professors.</p>
                 </div>
             </div>
         </div>
+        <div class="col-md-3">
+            <div class="feature-container">
+                <div class="feature-card">
+                    <h3>📚 Resource Sharing</h3>
+                    <p>Upload and access notes, assignments, and study materials with ease.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="feature-container">
+                <div class="feature-card">
+                    <h3>📊 Student Dashboard</h3>
+                    <p>Monitor attendance records, track progress, and stay ahead.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="feature-container">
+                <div class="feature-card">
+                    <h3>👨‍🏫 Professor Dashboard</h3>
+                    <p>Assign homework, upload solutions, and manage student performance.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
-        <footer>
-            <p>&copy; 2025 StudyNest. All rights reserved.</p>
-        </footer>
-    </form>
+    <footer>
+        <p>&copy; 2025 StudyNest. All rights reserved.</p>
+    </footer>
 </body>
 
 </html>
