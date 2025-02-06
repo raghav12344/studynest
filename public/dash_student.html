@@ -6,6 +6,9 @@
     <title>StudyNest - Smart Learning Hub</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 <!-- bootstrap link -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
@@ -51,8 +54,10 @@
                 <div class="container-fluid">
                     <a class="navbar-brand" style="color: #ff8c00; font-size: 1.5em; font-weight: bold;">StudyNest:
                         <span id="wlcmSpan" style="color: white; margin-left: 5px; font-size: 1.1rem;"></span></a>
-
                     <form class="d-flex" role="search">
+                        <button style="background-color: #0b1c2c; border: 0px;"><i
+                                class="fa-regular fa-bell fa-shake fa-xl"
+                                style="color: #f7f8f7; margin-right: 20px; margin-top: 10px;" id=""></i></button>
                         <button class="btn btn-outline-danger" type="submit" id="btnlogout">LogOut</button>
                     </form>
                 </div>
@@ -74,11 +79,11 @@
         <div class="col-md-3">
             <center>
                 <div class="card" style="width: 18rem;">
-                    <img src="images/anouncements.png" class="card-img-top" alt="..." style="height: 250px;">
+                    <img src="images/attendence" class="card-img-top" alt="..." style="height: 250px;">
                     <div class="card-body">
                         <center>
-                            <p class="card-text" style="font-family: comic sans ms;">Upload Some Important
-                                <b>Information</b> To Users
+                            <p class="card-text" style="font-family: comic sans ms;">Mark Your
+                                <b>Attendence</b> To Start Studying
                             </p>
                         </center>
                     </div>
@@ -88,11 +93,11 @@
         <div class="col-md-3">
             <center>
                 <div class="card" style="width: 18rem;">
-                    <img src="images/add_teacher.jpg" class="card-img-top" alt="..." style="height: 250px;">
+                    <img src="images/material" class="card-img-top" alt="..." style="height: 250px;">
                     <div class="card-body">
                         <center>
-                            <p class="card-text" style="font-family: comic sans ms;">Register New <b>Joining</b>
-                                Faculty/Member
+                            <p class="card-text" style="font-family: comic sans ms;">Get All The <b>Study Material</b>
+                                For Exams
                             </p>
                         </center>
                     </div>
