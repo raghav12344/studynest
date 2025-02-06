@@ -1,34 +1,42 @@
 const express = require('express');
-const path = require('path');
 const app = express();
 const port = 8080;
-/* Serve static files from the "public" directory */
-app.use(express.static("public"));
-// avien cloud connection
+
+// Avien Cloud Connection
 var mysql = require("mysql2");
 let config = "mysql://avnadmin:AVNS_vlC2U6o_RTqq987sX7F@studynest-studynest.i.aivencloud.com:25431/defaultdb?";
 let db = mysql.createConnection(config);
+
+/* Serve static files from the "public" directory */
+app.use(express.static("public"));
+
 db.connect(function (err) {
     if (err == null)
         console.log("connected to database");
-    else
+    else {
+        console.log("Error: Couldn't connect to database.");
         console.log(err.message);
-})
+    }
+});
+
 app.get("/", function (req, resp) {
     let path = __dirname + "/public/index.html";
     resp.sendFile(path);
-})
+});
+
 app.use(express.urlencoded(true));
 
 app.listen(port, function (req, resp) {
-    console.log("Server is running on http://localhost:${port}");
-})
+    console.log(`Server is running on http://localhost:${port}`);
+});
+
 app.get("/signup", function (req, resp) {
 
     let reg = req.query.reg;
     let pass = req.query.pass;
     let email = req.query.email;
     let utype = "STUDENT";
+
     db.query("select * from users where email=?", [email], function (err, jsonArray) {
         if (jsonArray.length == 1) {
             console.log("taken");
@@ -41,11 +49,12 @@ app.get("/signup", function (req, resp) {
                 }
                 else
                     resp.send("User with reg no exits please login");
-            })
+            });
         }
-    })
+    });
 
-})
+});
+
 app.get("/login", function (req, resp) {
     let reg = req.query.txtreg;
     let pass = req.query.txtpass;
@@ -57,5 +66,5 @@ app.get("/login", function (req, resp) {
             resp.send(jsonArray[0]["utype"]);
         else
             resp.send("Invalid Reg. No. and Password");
-    })
-})
+    });
+});
