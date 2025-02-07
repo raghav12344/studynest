@@ -2,6 +2,15 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const port = 8080;
+let fileuploader = require('express-fileupload');
+var cloudinary = require("cloudinary").v2;
+cloudinary.config({
+    cloud_name: 'drsm7bvgf',
+    api_key: '441925695211367',
+    api_secret: '-jhKZ_AH-55LErkx_jPF1wT89ec'
+});
+app.use(fileuploader());
+app.use(express.urlencoded(true));
 const bcrypt = require("bcrypt");
 /* Serve static files from the "public" directory */
 app.use(express.static("public"));
@@ -76,5 +85,28 @@ app.get("/login", function (req, resp) {
         }
         else
             resp.send("Invalid Reg. No.");
+    })
+})
+app.post("/upload-assignments", async function (req, resp) {
+
+    let reg = req.body.txtreg;
+    let sub = req.body.txtSub;
+    let title = req.body.txttitle;
+    let email = req.body.txtEmail;
+    let name = req.body.txtName;
+    let dop = req.body.date_dop;
+    let othinfo = req.body.txtinfo;
+    let path = __dirname + "/public/uploads/" + req.files.pdffile.name;
+    req.files.pdffile.mv(path);
+    await cloudinary.uploader.upload(path).then(function (result) {
+        pdfname = result.url;
+        console.log(pdfname);
+    });
+    db.query("insert into assignments values(?,?,?,?,?,?,?,?,?)", [null, reg, email, sub, title, dop, name, othinfo, pdfname], function (err) {
+        if (err == null) {
+            resp.send("Uploaded Successfulyy");
+        }
+        else
+            resp.send(err.message);
     })
 })

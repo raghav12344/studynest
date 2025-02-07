@@ -33,6 +33,9 @@
                 localStorage.removeItem("activeReg");
             }
         })
+        $("#btn_upload").click(function () {
+            location.href = "upload_assignments.html";
+        })
     })
 </script>
 <style>
@@ -77,63 +80,74 @@
     </div>
     <div class="row">
         <div class="col-md-3">
-            <center>
-                <div class="card" style="width: 18rem;">
-                    <img src="images/teacher attendence.avif" class="card-img-top" alt="..." style="height: 250px;">
-                    <div class="card-body">
-                        <center>
-                            <p class="card-text" style="font-family: comic sans ms;">Mark <b>Attendence</b> To Know The
-                                Defaulters
-                            </p>
-                        </center>
+            <button style="border: 0px; background-color: white;" id="btn_attendence">
+                <center>
+                    <div class="card" style="width: 18rem;">
+                        <img src="images/teacher attendence.avif" class="card-img-top" alt="..." style="height: 250px;">
+                        <div class="card-body">
+                            <center>
+                                <p class="card-text" style="font-family: comic sans ms;">Mark <b>Attendence</b> To Know
+                                    The
+                                    Defaulters
+                                </p>
+                            </center>
+                        </div>
                     </div>
-                </div>
-            </center>
+                </center>
+            </button>
         </div>
         <div class="col-md-3">
-            <center>
-                <div class="card" style="width: 18rem;">
-                    <img src="images/teacher-upload-assignments.avif" class="card-img-top" alt="..."
-                        style="height: 250px;">
-                    <div class="card-body">
-                        <center>
-                            <p class="card-text" style="font-family: comic sans ms;">Upload Some <b>Study Material</b>
-                                For Toppers
-                            </p>
-                        </center>
+            <button style="border: 0px; background-color: white;" id="btn_upload">
+                <center>
+                    <div class="card" style="width: 18rem;">
+                        <img src="images/teacher-upload-assignments.avif" class="card-img-top" alt="..."
+                            style="height: 250px;">
+                        <div class="card-body">
+                            <center>
+                                <p class="card-text" style="font-family: comic sans ms;">Upload Some <b>Study
+                                        Material</b>
+                                    For Toppers
+                                </p>
+                            </center>
+                        </div>
                     </div>
-                </div>
-            </center>
+                </center>
+            </button>
         </div>
         <div class="col-md-3">
-            <center>
-                <div class="card" style="width: 18rem;">
-                    <img src="images/personal_details.jpg" class="card-img-top" alt="..." style="height: 250px;">
-                    <div class="card-body">
-                        <center>
-                            <p class="card-text" style="font-family: comic sans ms;">Upload Own
-                                <b>Details</b>
-                                For Complete Registeration
-                            </p>
-                        </center>
+            <button style="border: 0px; background-color: white;" id="btn_personal">
+                <center>
+                    <div class="card" style="width: 18rem;">
+                        <img src="images/personal_details.jpg" class="card-img-top" alt="..." style="height: 250px;">
+                        <div class="card-body">
+                            <center>
+                                <p class="card-text" style="font-family: comic sans ms;">Upload Own
+                                    <b>Details</b>
+                                    For Complete Registeration
+                                </p>
+                            </center>
+                        </div>
                     </div>
-                </div>
-            </center>
+                </center>
+            </button>
         </div>
         <div class=" col-md-3">
-            <center>
-                <div class="card" style="width: 18rem;">
-                    <img src="images/settings.png" class="card-img-top" alt="..." style="height: 250px;">
-                    <div class="card-body">
-                        <center>
-                            <p class="card-text" style="font-family: comic sans ms;">Change <b>Password and email</b>
-                                and
-                                more......
-                            </p>
-                        </center>
+            <button style="border: 0px; background-color: white;" id="btn_settings">
+                <center>
+                    <div class="card" style="width: 18rem;">
+                        <img src="images/settings.png" class="card-img-top" alt="..." style="height: 250px;">
+                        <div class="card-body">
+                            <center>
+                                <p class="card-text" style="font-family: comic sans ms;">Change <b>Password and
+                                        email</b>
+                                    and
+                                    more......
+                                </p>
+                            </center>
+                        </div>
                     </div>
-                </div>
-            </center>
+                </center>
+            </button>
         </div>
     </div>
 </body>
